@@ -389,6 +389,71 @@ section.over-up {
 	color: #888b8e;
 }
 
+.logo-shower {
+	padding: 40px 80px;
+	overflow: hidden;
+	background-color: #e6eaec;
+}
+
+.logo-shower .logo-item {
+	float: left;
+	padding: 0 30px;
+}
+
+.logo-shower .logo-item img {
+	display: block;
+}
+
+.logo-shower .logo-item img.hover-item {
+	display: none;
+}
+
+.logo-shower .logo-item:hover img {
+	display: none;
+}
+
+.logo-shower .logo-item:hover img.hover-item {
+	display: block;
+}
+
+.testimonial-box {
+	padding: 65px 25%;
+	text-align: center;
+	background-color: #1e8ad2;
+}
+
+.testimonial-box .photo {
+	display: inline-block;
+	width: 95px;
+	height: 95px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 4px solid #78aed1;
+}
+
+.testimonial-box .name {
+	font-size: 12px;
+	color: #80cbfd;
+	text-transform: uppercase;
+	margin-top: 10px;
+}
+
+.testimonial-box .quote {
+	padding: 20px 0px;
+	color: #FFF;
+}
+
+.testimonial-box .info {
+	overflow: hidden;
+	color: #80cbfd;
+}
+
+.testimonial-box .info .separate {
+	width: 2px;
+	height: 100%;
+	border-left: 2px solid #449bd5;
+}
+
 /* next section */
 
 .location {
@@ -416,6 +481,7 @@ section.over-up {
 }
 
 .container-xs-table {
+	width: 100%;
 	display: table !important;
 }
 
@@ -442,6 +508,7 @@ section.over-up {
 
 @media (min-width: 1200px) {
 	.container-lg-table {
+		width: 100%;
 		display: table !important;
 	}
 
@@ -457,6 +524,7 @@ section.over-up {
 
 @media (min-width: 992px) {
 	.container-md-table {
+		width: 100%;
 		display: table !important;
 	}
 
@@ -472,6 +540,7 @@ section.over-up {
 
 @media (min-width: 768px) {
 	.container-sm-table {
+		width: 100%;
 		display: table !important;
 	}
 
