@@ -25,3 +25,80 @@ var configInstagramProfile = {
 
 var feed = new Instafeed(configInstagramProfile);
 feed.run();
+
+animateClass = function(options) {
+
+	var optns = {
+		animateToLeftClass: 'animate-to-left',
+		animateToRightClass: 'animate-to-right',
+		animateToTopClass: 'animate-to-top',
+		animateToBottomClass: 'animate-to-bottom'
+	};
+	var self = this;
+
+	// this.options = optns;
+	this.options = (typeof(options) == 'object') ? options : optns;
+
+	this.stage = function() {
+
+		animate();
+
+	}
+
+	function animate() {
+
+		var animateSections = $('.animate-on');
+
+		for (var i = 0; i < animateSections.length; i++) {
+			var topElement = $(animateSections[i]).offset().top;
+			var posToAction = $(window).height() * 0.90;
+			var scrollTop = $(window).scrollTop();
+
+			if (scrollTop >= (topElement - posToAction)) {
+				$(animateSections[i]).addClass('animate-actived');
+				openAnimate(animateSections[i]);
+			} else {
+				$(animateSections[i]).removeClass('animate-actived');
+				closeAnimate(animateSections[i]);
+			}
+		}
+
+	}
+
+	function openAnimate(container) {
+		var animateElements = $('.animate', container);
+		for (var i = 0; i < animateElements.length; i++) {
+			var delay = ($(animateElements[i]).data('delay')) ? $(animateElements[i]).data('delay'): 0;
+			$(animateElements[i]).css('-webkit-transition-delay', delay+'s');
+			$(animateElements[i]).css('-moz-transition-delay', delay+'s');
+			$(animateElements[i]).css('-o-transition-delay', delay+'s');
+			$(animateElements[i]).css('transition-delay', delay+'s');
+
+		}
+	}
+
+	function closeAnimate(container) {
+		var animateElements = $('.animate', container);
+		for (var i = 0; i < animateElements.length; i++) {
+			var delay = 0;
+			$(animateElements[i]).css('-webkit-transition-delay', delay+'s');
+			$(animateElements[i]).css('-moz-transition-delay', delay+'s');
+			$(animateElements[i]).css('-o-transition-delay', delay+'s');
+			$(animateElements[i]).css('transition-delay', delay+'s');
+
+		}
+	}
+}
+
+animateClass.prototype.init = function() {
+	var self = this;
+	$(window).on('scroll', self.stage);
+}
+
+var animate1 = new animateClass();
+animate1.init();
+
+
+
+
+

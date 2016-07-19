@@ -729,3 +729,23 @@ footer {
 		display: table-cell !important;
 	}
 }
+
+.to-left {
+	opacity: 0;
+	transform: translateX(100%);
+}
+.animate-actived .to-left {
+	transition: all 0.4s ease-in;
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.to-right {
+	opacity: 0;
+	transform: translateX(-100%);
+}
+.animate-actived .to-right {
+	transition: all 0.4s ease-in;
+	opacity: 1;
+	transform: translateY(0);
+}
