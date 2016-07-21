@@ -26,23 +26,29 @@ var configInstagramProfile = {
 var feed = new Instafeed(configInstagramProfile);
 feed.run();
 
+/*	@Class animateClass: 
+ *	
+ *	@parameter {object} options
+ */
+
 animateClass = function(options) {
 
 	var optns = {
-		animateToLeftClass: 'animate-to-left',
-		animateToRightClass: 'animate-to-right',
-		animateToTopClass: 'animate-to-top',
-		animateToBottomClass: 'animate-to-bottom'
-	};
-	var self = this;
+			animateToLeftClass: 'animate-to-left',
+			animateToRightClass: 'animate-to-right',
+			animateToTopClass: 'animate-to-top',
+			animateToBottomClass: 'animate-to-bottom'
+		},
+		self = this;
 
-	// this.options = optns;
-	this.options = (typeof(options) == 'object') ? options : optns;
+	self.options = (typeof(options) == 'object') ? options : optns;
 
-	this.stage = function() {
+	self.init = function() {
+		$(window).on('scroll', self.stage);
+	}
 
+	self.stage = function() {
 		animate();
-
 	}
 
 	function animate() {
@@ -90,15 +96,54 @@ animateClass = function(options) {
 	}
 }
 
-animateClass.prototype.init = function() {
-	var self = this;
-	$(window).on('scroll', self.stage);
-}
-
 var animate1 = new animateClass();
 animate1.init();
 
+/*	@Class slasticMenu: 
+ *	
+ *	@parameter {object} options
+ *		fixed_menu: default '#fixed_menu' | Id fixed menu
+ *		static_menu: default '#fixed_menu' | Id static Mmnu
+ */
+
+slasticMenu = function(options) {
+	var self = this;
+
+	self.fixedMenu = (options.fixed_menu !== 'undefined') ? options.fixed_menu : '#fixed_menu';
+
+	self.staticMenu = (options.static_menu !== 'undefined') ? options.static_menu : '#static_menu';
+
+	self.init = function() {
+		nav = $(self.fixedMenu);
+		nav.hide();
+
+		$(window).on('scroll', self.stage);
+	}
+
+	self.stage = function() {
+		var el = $(self.staticMenu),
+			top = parseInt(el.offset().top),
+			height = parseInt(el.height()),
+			scrollTop = $(document).scrollTop(),
+			nav = $(self.fixedMenu);
+
+		nav.hide();
 
 
+		if ( scrollTop > ( top + height ) ) {
+			$(nav).addClass('active');
+			nav.show();
+		} else {
+			nav.hide();
+			$(nav).removeClass('active');
+		}
+	}
+}
 
+var options = {
+	fixed_menu: '#navigation',
+	static_menu: '#main-top'
+},
+animateMenu = new slasticMenu(options);
 
+animateMenu.init();

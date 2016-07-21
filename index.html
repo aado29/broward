@@ -10,35 +10,74 @@
 </head>
 <body>
 	<div id="navigation">
-		<div class="container-fluid">
-			<div class="col-xs-2">
-				<div class="row">
-					
+		<nav class="navbar navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="row vertical-sm-align">
+					<div class="navbar-header col-xs-12 col-sm-3">
+						<div class="container-fluid">
+							<div class="row vertical-xs-align">
+								<div class="col-xs-12">
+									<a class="logo-brand" href="#">
+										<img alt="Brand" src="images/logo-blue.png">
+									</a>
+								</div>
+								<div class="col-xs-12">
+									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-5" aria-expanded="false">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="collapse navbar-collapse col-xs-12 col-sm-9" id="bs-example-navbar-collapse-5">
+						<div class="container-fluid">
+							<div class="row vertical-sm-align navbar-right">
+								<ul class="nav navbar-items-container navbar-nav navbar-right">
+									<li><a href="#">Clickable link</a></li>
+									<li><a href="#">Clickable link</a></li>
+								</ul>
+								<div class="container-fluid">
+									<div class="container-fluid">
+										<ul class="row action-btns vertical-xs-align">
+											<li><a href="#" class="btn btn-blue small">Request info</a></li>
+											<li><a href="#" class="btn-call dark"></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="col-xs-10">
-				<div class="row">
-					
-				</div>
-			</div>
-		</div>
+		</nav>
 	</div>
-	<header id="main" style="background-image: url(images/bg-header.jpg)">
+	<header id="main" style="background-image: url('images/bg-header.jpg')">
 		<div class="container-fluid">
 			<div class="row">
-				<nav id="main-top">
-					<div>
-						<a href="#">
-							<img src="images/logo.png" alt="logo">
-						</a>
-					</div>
-					<div class="container-xs-table">
-						<ul class="row-xs-table">
-							<li class="col-xs-table col-center"><a href="#" class="btn btn-blue small" id="">Request info</a></li>
-							<li class="col-xs-table col-center"><a href="#" class="btn-call"></a></li>
-						</ul>
-					</div>
-				</nav> <!-- main-top end -->
+				<div id="main-top">
+					<nav class="navbar">
+						<div class="container-fluid">
+							<div class="row vertical-sm-align">
+								<div class="col-sm-6">
+									<a class="logo-brand" href="#">
+										<img src="images/logo.png" alt="logo">
+									</a>
+								</div>
+								<div class="col-sm-6">
+									<div class="container-fluid">
+										<ul class="row navbar-right vertical-xs-align action-btns">
+											<li><a href="#" class="btn btn-blue small">Request info</a></li>
+											<li><a href="#" class="btn-call"></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div> <!-- main-top end -->
 				<div class="col-md-10 col-lg-8">
 					<div class="row">
 						<div id="main-bottom">
@@ -57,18 +96,18 @@
 	</header>
 	<section class="over-up" id="discover">
 		<div class="over-content">
-			<div class="container-fluid container-xs-table">
+			<div class="container-fluid">
 				<div class="row">
-					<div class="col-xs-12 row-xs-table">
-						<div class="row animate-on">
-							<div class="col-md-5 col-lg-6 col-xs-table col-center">
+					<div class="col-xs-12">
+						<div class="row vertical-xs-align animate-on">
+							<div class="col-md-5 col-lg-6">
 								<div class="row">
 									<div class="animate to-left over-to-left over-video-container">
 										<img class="full-img" src="images/bg-video.jpg" alt="">
 									</div>
 								</div>
 							</div>
-							<div class="col-md-7 col-lg-6 col-xs-table col-center">
+							<div class="col-md-7 col-lg-6">
 								<div class="row">
 									<div class="animate to-left group-list" data-delay="0.5">
 										<h1 class="title">
@@ -97,11 +136,11 @@
 										</div> <!-- right end -->
 									</div> <!-- group-list end -->
 								</div> <!-- row end -->
-							</div> <!-- col-md-7 col-lg-6 col-xs-table col-center end -->
+							</div> <!-- col-md-7 col-lg-6 col-center end -->
 						</div> <!-- row end -->
-					</div> <!-- col-xs-12 row-xs-table end -->
+					</div> <!-- col-xs-12 end -->
 				</div> <!-- row end -->
-			</div> <!-- container-fluid container-xs-table end -->
+			</div> <!-- container-fluid end -->
 		</div> <!-- over-content end -->
 	</section> <!-- over-up end -->
 	<section class="over-group" id="study-options">
@@ -113,61 +152,57 @@
 					Broward College offers the flexibility you need to complete your degree.
 					</p>
 				</div> <!-- title col-xs-8 col-xs-offset-2 end -->
-				<div class="over-container container-xs-table">
-					<div class="col-xs-12 row-xs-table">
-						<div class="row animate-on">
-							<div class="col-md-5 col-lg-6 col-xs-table col-center">
-								<div class="row">
-									<div class="animate to-left over-to-left over-box-container">
-										<div class="header-box">
-											<img src="images/building.png" alt="building">
-											<h1><strong>Learn on</strong></br>Campus</h1>
-										</div>
-										<p>We know convenience is important. With 3 main campuses, 10 satellite centers and our fully integrated online campus to choose from, an accessible location is close – even just a click away. We also offer several international centers located in Bolivia, Ecuador, Peru, India, China, Sri Lanka, and Vietnam.</p>
-										<div class="link-box">
-											<a href="#" class="btn btn-blue">I want to apply</a>
-											<a href="#" class="btn btn-transparent">View progrmas</a>
-										</div>
+				<div class="col-xs-12 over-container">
+					<div class="row vertical-xs-align animate-on">
+						<div class="col-md-5 col-lg-6">
+							<div class="row">
+								<div class="animate to-left over-to-left over-box-container">
+									<div class="header-box">
+										<img src="images/building.png" alt="building">
+										<h1><strong>Learn on</strong></br>Campus</h1>
 									</div>
-								</div> <!-- row end -->
-							</div> <!-- col-md-5 col-lg-6 col-xs-table col-center end -->
-							<div class="col-md-7 col-lg-6 col-xs-table col-center">
-								<div class="row">
-									<img class="animate to-left full-img" src="images/learn.jpg" alt="" data-delay="0.5">
-									<div class="animate to-left over-tiny-box"  data-delay="0.5">
-										<img class="full-img" src="images/bg_video_2.jpg" alt="">
+									<p>We know convenience is important. With 3 main campuses, 10 satellite centers and our fully integrated online campus to choose from, an accessible location is close – even just a click away. We also offer several international centers located in Bolivia, Ecuador, Peru, India, China, Sri Lanka, and Vietnam.</p>
+									<div class="link-box">
+										<a href="#" class="btn btn-blue">I want to apply</a>
+										<a href="#" class="btn btn-transparent">View progrmas</a>
 									</div>
-								</div> <!-- row end -->
-							</div> <!-- col-md-7 col-lg-6 col-xs-table col-center end -->
-						</div> <!-- row end -->
-					</div> <!-- col-xs-12 row-xs-table end -->
-				</div> <!-- container-fluid container-xs-table end -->
-				<div class="over-container container-xs-table">
-					<div class="col-xs-12 row-xs-table">
-						<div class="row animate-on">
-							<div class="col-md-7 col-lg-6 col-xs-table col-center uneven">
-								<div class="row">
-									<img class="animate to-right full-img" src="images/learn-online.jpg" alt="" data-delay="0.5">
-								</div> <!-- row end -->
-							</div> <!-- col-md-7 col-lg-6 col-xs-table col-center end -->
-							<div class="col-md-5 col-lg-6 col-xs-table col-center">
-								<div class="row">
-									<div class="animate to-right over-to-right over-box-container">
-										<div class="header-box">
-											<img src="images/screen.png" alt="screen">
-											<h1></i><strong>Learn</strong></br>Online</h1>
-										</div>
-										<p>Broward College offers a variety of classes and degrees that can be taken 100% online from anywhere. Online students enjoy the same benefits as domestic students including guaranteed admission to public state universities.</p>
-										<div class="link-box">
-											<a href="#" class="btn btn-blue">I want to apply</a>
-											<a href="#" class="btn btn-transparent">View progrmas</a>
-										</div>
+								</div>
+							</div> <!-- row end -->
+						</div> <!-- col-md-5 col-lg-6 col-center end -->
+						<div class="col-md-7 col-lg-6">
+							<div class="row">
+								<img class="animate to-left full-img" src="images/learn.jpg" alt="" data-delay="0.5">
+								<div class="animate to-left over-tiny-box"  data-delay="0.5">
+									<img class="full-img" src="images/bg_video_2.jpg" alt="">
+								</div>
+							</div> <!-- row end -->
+						</div> <!-- col-md-7 col-lg-6 col-center end -->
+					</div> <!-- row end -->
+				</div> <!-- col-xs-12 over-container end -->
+				<div class="col-xs-12 over-container">
+					<div class="row vertical-xs-align animate-on">
+						<div class="col-md-7 col-lg-6 uneven">
+							<div class="row">
+								<img class="animate to-right full-img" src="images/learn-online.jpg" alt="" data-delay="0.5">
+							</div> <!-- row end -->
+						</div> <!-- col-md-7 col-lg-6 col-center end -->
+						<div class="col-md-5 col-lg-6">
+							<div class="row">
+								<div class="animate to-right over-to-right over-box-container">
+									<div class="header-box">
+										<img src="images/screen.png" alt="screen">
+										<h1></i><strong>Learn</strong></br>Online</h1>
 									</div>
-								</div> <!-- row end -->
-							</div> <!-- col-md-5 col-lg-6 col-xs-table col-center end -->
-						</div> <!-- row end -->
-					</div> <!-- col-xs-12 row-xs-table end -->
-				</div> <!-- container-fluid container-xs-table end -->
+									<p>Broward College offers a variety of classes and degrees that can be taken 100% online from anywhere. Online students enjoy the same benefits as domestic students including guaranteed admission to public state universities.</p>
+									<div class="link-box">
+										<a href="#" class="btn btn-blue">I want to apply</a>
+										<a href="#" class="btn btn-transparent">View progrmas</a>
+									</div>
+								</div>
+							</div> <!-- row end -->
+						</div> <!-- col-md-5 col-lg-6 end -->
+					</div> <!-- row end -->
+				</div> <!-- col-xs-12 over-container end -->
 			</div> <!-- row end -->
 		</div> <!-- container-fluid end -->
 	</section> <!-- over-group end -->
@@ -279,49 +314,47 @@
 				</div> <!-- title col-xs-8 col-xs-offset-2 end -->
 			</div>
 		</div>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="logo-shower">
-					<div class="container-xs-table">
-						<div class="row-xs-table">
-							<div class="col-xs-table col-center logo-item">
-								<a href="#">
-									<img src="images/UF.png" alt="">
-									<img class="hover-item" src="images/UF_hover.png" alt="">
-								</a>
-							</div>
-							<div class="col-xs-table col-center logo-item">
-								<a href="#">
-									<img src="images/FIU.png" alt="">
-									<img class="hover-item" src="images/FIU_hover.png" alt="">
-								</a>
-							</div>
-							<div class="col-xs-table col-center logo-item">
-								<a href="#">
-									<img src="images/FAU.png" alt="">
-									<img class="hover-item" src="images/FAU_hover.png" alt="">
-								</a>
-							</div>
-							<div class="col-xs-table col-center logo-item">
-								<a href="#">
-									<img src="images/FSU.png" alt="">
-									<img class="hover-item" src="images/FSU_hover.png" alt="">
-								</a>
-							</div>
-							<div class="col-xs-table col-center logo-item">
-								<a href="#">
-									<img src="images/UCF.png" alt="">
-									<img class="hover-item" src="images/UCF_hover.png" alt="">
-								</a>
-							</div>
+		<div class="logo-shower">
+			<div class="container-logo">
+				<div class="container-fluid">
+					<div class="row vertical-xs-align">
+						<div class="logo-item">
+							<a href="#">
+								<img src="images/UF.png" alt="">
+								<img class="hover-item" src="images/UF_hover.png" alt="">
+							</a>
+						</div>
+						<div class="logo-item">
+							<a href="#">
+								<img src="images/FIU.png" alt="">
+								<img class="hover-item" src="images/FIU_hover.png" alt="">
+							</a>
+						</div>
+						<div class="logo-item">
+							<a href="#">
+								<img src="images/FAU.png" alt="">
+								<img class="hover-item" src="images/FAU_hover.png" alt="">
+							</a>
+						</div>
+						<div class="logo-item">
+							<a href="#">
+								<img src="images/FSU.png" alt="">
+								<img class="hover-item" src="images/FSU_hover.png" alt="">
+							</a>
+						</div>
+						<div class="logo-item">
+							<a href="#">
+								<img src="images/UCF.png" alt="">
+								<img class="hover-item" src="images/UCF_hover.png" alt="">
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="testimonials">
+		<div class="testimonials">
+			<div class="container-fluid">
+				<div class="row">
 					<div id="carouselTestimoliasl" class="carousel slide" data-ride="carousel">
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner" role="listbox">
@@ -361,22 +394,18 @@
 				</div>
 			</div>
 		</div>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="contact">
-					<div class="container-xs-table">
-						<div class="container-xs-row">
-							<div class="col-xs-table col-xs-9 col-center">
-								<div class="row">
-									<h1>Questions or ready to apply?</h1>
-									<p>Contact us and we’ll have one of our counselors reach out and assist you with the application process. Se habla Español / Se fala português.</p>
-								</div>
-							</div>
-							<div class="col-xs-table col-xs-3 col-center">
-								<div class="row">
-									<a href="#" class="btn btn-blue">Contact Us</a>
-								</div>
-							</div>
+		<div class="contact">
+			<div class="container-fluid">
+				<div class="row vertical-md-align">
+					<div class="col-md-9">
+						<div class="row">
+							<h1>Questions or ready to apply?</h1>
+							<p>Contact us and we’ll have one of our counselors reach out and assist you with the application process. Se habla Español / Se fala português.</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="row">
+							<a href="#" class="btn btn-blue">Contact Us</a>
 						</div>
 					</div>
 				</div>
@@ -403,41 +432,37 @@
 	<section class="footer">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="container-xs-table">
-					<div class="row-xs-table">
-						<div class="col-xs-table col-xs-2 col-top">
-							<img class="full-img" src="images/logo.png" alt="logo">
-							<h2>Broward College</h2>
-							<p>111 East Las Olas Boulevard</p>
-							<p>Fort Lauderdale, FL 33301</p>
-							<p>Phone: 954.201.7350</p>
-							<p><a href="#">support@browardcollege.com</a></p>
-							<a href="#" class="btn btn-transparent">Request more info</a>
-						</div>
-						<div class="col-xs-table col-xs-4 col-top">
-							<h1 class="title-footer">Latest from twitter</h1>
-							<div class="twitter-feeds">
-								<div id="twitter-content"></div>
-							</div>
-						</div>
-						<div class="col-xs-table col-xs-2 col-top">
-							<h1 class="title-footer">Links</h1>
-							<ul class="nav">
-								<li><a href="#">Discover</a></li>
-								<li><a href="#">Study options</a></li>
-								<li><a href="#">Programs</a></li>
-								<li><a href="#">Transfer options</a></li>
-								<li><a href="#">Locations</a></li>
-								<li><a href="#">Request info</a></li>
-								<li><a href="#">Contact Us</a></li>
-							</ul>
-						</div>
-						<div class="col-xs-table col-xs-4 col-top">
-							<h1 class="title-footer">Instagram</h1>
-							<div class="instagram-feeds">
-								<div id="instagram-content"></div>
-							</div>
-						</div>
+				<div class="col-xs-3">
+					<img class="full-img" src="images/logo.png" alt="logo">
+					<h2>Broward College</h2>
+					<p>111 East Las Olas Boulevard</p>
+					<p>Fort Lauderdale, FL 33301</p>
+					<p>Phone: 954.201.7350</p>
+					<p><a href="#">support@browardcollege.com</a></p>
+					<a href="#" class="btn btn-transparent">Request more info</a>
+				</div>
+				<div class="col-xs-3">
+					<h1 class="title-footer">Latest from twitter</h1>
+					<div class="twitter-feeds">
+						<div id="twitter-content"></div>
+					</div>
+				</div>
+				<div class="col-xs-2">
+					<h1 class="title-footer">Links</h1>
+					<ul class="nav">
+						<li><a href="#">Discover</a></li>
+						<li><a href="#">Study options</a></li>
+						<li><a href="#">Programs</a></li>
+						<li><a href="#">Transfer options</a></li>
+						<li><a href="#">Locations</a></li>
+						<li><a href="#">Request info</a></li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-4">
+					<h1 class="title-footer">Instagram</h1>
+					<div class="instagram-feeds">
+						<div id="instagram-content"></div>
 					</div>
 				</div>
 			</div>
