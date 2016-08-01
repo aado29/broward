@@ -15,12 +15,12 @@ twitterFetcher.fetch(configTwitterProfile);
 var configInstagramProfile = {
 	target: 'instagram-content',
 	get: 'user',
-    userId: '623597756',
-    clientId: '02b47e1b98ce4f04adc271ffbd26611d',
-    accessToken: '623597756.02b47e1.3dbf3cb6dc3f4dccbc5b1b5ae8c74a72',
-    resolution: 'low_resolution',
-    sortBy: 'most-recent',
-    limit: 9,
+	userId: '623597756',
+	clientId: '02b47e1b98ce4f04adc271ffbd26611d',
+	accessToken: '623597756.02b47e1.3dbf3cb6dc3f4dccbc5b1b5ae8c74a72',
+	resolution: 'low_resolution',
+	sortBy: 'most-recent',
+	limit: 9,
 };
 
 var feed = new Instafeed(configInstagramProfile);
@@ -147,3 +147,123 @@ var options = {
 animateMenu = new slasticMenu(options);
 
 animateMenu.init();
+
+var CustomMap = function(options) {
+
+	this.map = null;
+	this.mapContainer = (typeof options.container == 'object') ? options.container : document.getElementById('map-container');
+	this.mapStyle = {
+		mapTypeId: 'roadmap',
+		scrollwheel: false,
+      	zoomControl: false,
+		navigationControl: false,
+		mapTypeControl: false,
+		scaleControl: false,
+		draggable: false,
+		styles: [
+			{
+				"featureType":"administrative",
+				"elementType":"all",
+				"stylers":[
+					{"visibility":"on"},
+					{"saturation":-100},
+					{"lightness":20}
+				]
+			},
+			{
+				"featureType":"road",
+				"elementType":"all",
+				"stylers":[
+					{"visibility":"on"},
+					{"saturation":-100},
+					{"lightness":40}
+				]
+			},
+			{
+				"featureType":"water",
+				"elementType":"all",
+				"stylers":[
+					{"visibility":"on"},
+					{"saturation":-10},
+					{"lightness":30}
+				]
+			},
+			{
+				"featureType":"landscape.man_made",
+				"elementType":"all",
+				"stylers":[
+					{"visibility":"simplified"},
+					{"saturation":-60},
+					{"lightness":10}
+				]
+			},
+			{
+				"featureType":"landscape.natural",
+				"elementType":"all",
+				"stylers":[
+					{"visibility":"simplified"},
+					{"saturation":-60},
+					{"lightness":60}
+				]
+			},
+			{
+				"featureType":"poi",
+				"elementType":"all",
+				"stylers":[
+					{"visibility":"off"},
+					{"saturation":-100},
+					{"lightness":60}
+				]
+			},
+			{
+				"featureType":"transit",
+				"elementType":"all",
+				"stylers":[
+					{"visibility":"off"},
+					{"saturation":-100},
+					{"lightness":60}
+				]
+			}
+		]
+	};
+	this.markers = (typeof options.markers == 'object') ? options.markers : new Array();
+	this.maxWithInfoWindow = (options.maxWithInfoWindow) ? options.maxWithInfoWindow : 350;
+
+	this.init = function() {
+		this.map = new google.maps.Map(this.mapContainer, this.mapStyle);
+		this.map.setTilt(45);
+		this.bounds = new google.maps.LatLngBounds();
+		for (var i = 0; i < this.markers.length; i++) {
+			//this.drawMarker(i, location.hostname + 'images/min-marker.png');
+			this.drawMarker(i, 'file:///Users/aado29/Documents/Proyectos/broward/images/min-marker.png');
+		}
+	};
+
+	this.drawMarker = function(id, image) {
+		var self = this;
+		var position = new google.maps.LatLng(this.markers[id][0], this.markers[id][1]);
+		var marker = new google.maps.Marker({
+			position:	position,
+			map:		self.map,
+			title:		self.markers[id][2],
+			icon:		image
+		});
+		self.bounds.extend(position);
+		   
+		google.maps.event.addListener(marker, 'click', (function(marker, id) { 
+			return function() {
+				var infoWindow = new google.maps.InfoWindow({
+					maxWidth : self.maxWithInfoWindow,
+					content: self.markers[id][3]
+				});
+				infoWindow.open(self.map, marker);
+				marker.setIcon('file:///Users/aado29/Documents/Proyectos/broward/images/max-marker.png');
+			}
+		})(marker, id));
+
+		// Automatically center the map fitting all markers on the screen
+		self.map.fitBounds(self.bounds);
+	};
+	
+}
+

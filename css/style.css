@@ -734,6 +734,11 @@ footer {
 	margin: 0;
 }
 
+.gm-style-iw h4, .gm-style-iw p {
+	margin: 0;
+	padding: 0;
+}
+
 .container-xs-table {
 	width: 100%;
 	display: table !important;

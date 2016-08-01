@@ -379,6 +379,27 @@
 									</div>
 								</div>
 							</div>
+							<div class="item">
+								<div class="testimonial-box">
+									<div class="photo">
+										<img src="images/face.jpg" alt="face">
+									</div>
+									<div class="name">Eric Hoffman  - marketing</div>
+									<div class="quote">“ Through the DCC I’ve learned that any effort, no matter how big or small, can transform into a life-changing difference for someone else.”</div>
+									<div class="info container-xs-table">
+										<div class="row-xs-table">
+											<div class="col-xs-table col-center">
+												<p>Transfered to NYU<br/>
+												Spring, 2015</p>
+											</div>
+											<div class="col-xs-table col-center separate"></div>
+											<div class="col-xs-table col-center">
+												<img src="images/logo-r.jpg" alt="">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<!-- Left and right controls -->
@@ -423,8 +444,7 @@
 		</div>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="map" id="custom-map">
-					<img class="full-img" src="images/map.jpg" alt="image-map">
+				<div class="map" id="custom-map" style="min-height: 500px;">
 				</div>
 			</div>
 		</div>
@@ -490,6 +510,24 @@
 	</footer>
 	<script type="text/javascript" src="js/twitter-post-fetcher.js"></script>
 	<script type="text/javascript" src="js/instafeed.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl-EDTJ5_uU3zBIX7-wNTu-qSZr1DO5Dw"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		var mapOptions = {
+			container: document.getElementById('custom-map'),
+			markers: [
+				[25.7627443,-80.1933667, 'Main Office, Brickell', '<p>Descripcion Main Office, Brickell</p>'],
+				[25.788666,-80.335797, 'Doral Branch', '<p>Descripcion Doral Branch</p>'],
+				[25.7592064,-80.2589465, 'Coral Gables Branch', '<p>Descripcion Coral Gables Branch</p>'],
+				[25.7619662,-80.3263765, 'Westchester Branch', '<p>Descripcion Westchester Branch</p>'],
+				[25.7735908,-80.1894627, 'Downtown Branch', '<p>Descripcion Downtown Branch</p>'],
+				[25.8669486,-80.307715, 'Hialeah Branch', '<p>Descripcion Hialeah Branch</p>'],
+				[25.6876859,-80.3529369, 'Kendall Branch', '<p>Descripcion Kendall Branch</p>']
+			],
+			maxWithInfoWindow: 300
+		};
+		var map = new CustomMap(mapOptions);
+		map.init();
+	</script>
 </body>
 </html>
