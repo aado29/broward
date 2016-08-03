@@ -36,13 +36,16 @@
 						<div class="container-fluid">
 							<div class="row vertical-sm-align navbar-right">
 								<ul class="nav navbar-items-container navbar-nav navbar-right">
-									<li><a href="#">Clickable link</a></li>
-									<li><a href="#">Clickable link</a></li>
+									<li><a href="#">Discover</a></li>
+									<li><a href="#">Study Options</a></li>
+									<li><a href="#">Programs</a></li>
+									<li><a href="#">Transfer Options</a></li>
+									<li><a href="#">Locations</a></li>
 								</ul>
 								<div class="container-fluid">
 									<div class="container-fluid">
 										<ul class="row action-btns vertical-xs-align">
-											<li><a href="#" class="btn btn-blue small">Request info</a></li>
+											<li><a href="#" data-toggle="modal" data-target="#formModal" class="btn btn-blue small">Request info</a></li>
 											<li><a href="#" class="btn-call dark"></a></li>
 										</ul>
 									</div>
@@ -69,7 +72,7 @@
 								<div class="col-sm-6">
 									<div class="container-fluid">
 										<ul class="row navbar-right vertical-xs-align action-btns">
-											<li><a href="#" class="btn btn-blue small">Request info</a></li>
+											<li><a href="#" data-toggle="modal" data-target="#formModal" class="btn btn-blue small">Request info</a></li>
 											<li><a href="#" class="btn-call"></a></li>
 										</ul>
 									</div>
@@ -146,7 +149,7 @@
 	<section class="over-group" id="study-options">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="title col-xs-8 col-xs-offset-2">
+				<div class="header-section dark title col-xs-8 col-xs-offset-2">
 					<h1>An education that fits your life</h1>
 					<p>We understand that college students are busy that’s we offer classes during the day, evenings and weekends. Many students choose blended courses both online and on campus. However you prefer to study, 
 					Broward College offers the flexibility you need to complete your degree.
@@ -209,7 +212,7 @@
 	<section class="views" id="programs">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="title col-xs-8 col-xs-offset-2">
+				<div class="header-section title col-xs-8 col-xs-offset-2">
 					<h1>Academic programs</h1>
 					<p><strong>Academic programs</strong></p>
 					<p>Broward College’s offers over 200 degree program designed to move you from classroom to career. From Engineering to Business and beyond - our eight career pathways are designed to get you on the fast track to success. Building a better future starts with Broward College.</p>
@@ -308,7 +311,7 @@
 	<section class="reviews" id="transfer-options">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="title col-xs-8 col-xs-offset-2">
+				<div class="header-section dark title col-xs-8 col-xs-offset-2">
 					<h1>Top University transfer options</h1>
 					<p>Once you have earned your Associate of Arts (A.A.) degree from Broward College, you are guaranteed admission to one of the state’s public universities to pursue a bachelor’s degree through our 2+2 Transfer Program.</p>
 				</div> <!-- title col-xs-8 col-xs-offset-2 end -->
@@ -436,7 +439,7 @@
 	<section class="location" id="location">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="title col-xs-8 col-xs-offset-2">
+				<div class="header-section dark title col-xs-8 col-xs-offset-2">
 					<h1>Our campuses</h1>
 					<p>Broward College is located in the heart of sunny South Florida. We’re just minutes away from 20-plus miles of stunning beaches to the east. We offer 3 main campuses and 10 satellite centers located throughout Broward County. Just 30 minutes away from Miami and driving distance from Orlando.</p>
 				</div> <!-- title col-xs-8 col-xs-offset-2 end -->
@@ -508,6 +511,97 @@
 			</div>
 		</div>
 	</footer>
+	<div id="formModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content col-md-6 col-md-offset-6 col-xs-12">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<div class="header-section dark">
+					<center><img src="images/broward-icon.png" alt="icon logo"></center>
+					<h1>Get Connected</h1>
+					<p>Thank you for your interest in Broward College. Complete the form below with your information, and we will get in touch with you shortly.
+					</br>
+					<i>For immediate assistance submit the form and call us at (954) 201-7350.</i>
+					</p>
+				</div>
+				<form action="#" method="POST" class="form-line">
+					<div class="container-fluid">
+						<div class="row form-line-group">
+							<div class="col-sm-6">
+								<label class="hide" for="firstNameInput">First Name</label>
+								<input type="text" class="form-line-input" id="firstNameInput" placeholder="First Name">
+							</div>
+							<div class="col-sm-6">
+								<label class="hide" for="lastNameInput">Last Name</label>
+								<input type="text" class="form-line-input" id="lastNameInput" placeholder="Last Name">
+							</div>
+						</div>
+						<div class="row form-line-group">
+							<div class="col-sm-6">
+								<label class="hide" for="emailInput">Email address</label>
+								<input type="email" class="form-line-input" id="emailInput" placeholder="Email address">
+							</div>
+							<div class="col-sm-6">
+								<label class="hide" for="dateOfBirthInput">Date of Birth</label>
+								<input type="date" class="form-line-input" id="dateOfBirthInput" placeholder="Date of Birth">
+							</div>
+						</div>
+						<div class="row form-line-group">
+							<div class="col-sm-6">
+								<label class="hide" for="phoneInput">Phone number</label>
+								<input type="phone" class="form-line-input" id="phoneInput" placeholder="Phone number">
+							</div>
+							<div class="col-sm-6">
+								<label class="hide" for="bestTimeInput">Date of Birth</label>
+								<select class="form-line-input" id="bestTimeInput">
+									<option value="">Best time to call?</option>
+								</select>
+							</div>
+						</div>
+						<div class="row form-line-group">
+							<div class="col-sm-6">
+								<label class="hide" for="cityInput">City</label>
+								<input type="email" class="form-line-input" id="cityInput" placeholder="City">
+							</div>
+							<div class="col-sm-6">
+								<label class="hide" for="countryInput">Country</label>
+								<input type="date" class="form-line-input" id="countryInput" placeholder="Country">
+							</div>
+						</div>
+						<div class="row form-line-group">
+							<div class="col-xs-12">
+								<label class="hide" for="careerInput">Career / Major area of interest</label>
+								<select class="form-line-input" id="careerInput">
+									<option value="">Career / Major area of interest</option>
+								</select>
+							</div>
+						</div>
+						<div class="row form-line-group">
+							<div class="col-sm-6">
+								<label class="hide" for="academicLevelInput">Academic level</label>
+								<select class="form-line-input" id="academicLevelInput">
+									<option value="">Academic level</option>
+								</select>
+							</div>
+							<div class="col-sm-6">
+								<label class="hide" for="startDateInput">Anticipated start date</label>
+								<select class="form-line-input" id="startDateInput">
+									<option value="">Anticipated start date</option>
+								</select>
+							</div>
+						</div>
+						<center>
+							</br>
+							</br>
+							<input type="submit" class="btn btn-blue" value="Submit">
+							</br>
+							<span class="hadle-text blue">* Required field</span>
+						</center>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<script type="text/javascript" src="js/twitter-post-fetcher.js"></script>
 	<script type="text/javascript" src="js/instafeed.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl-EDTJ5_uU3zBIX7-wNTu-qSZr1DO5Dw"></script>
@@ -516,13 +610,27 @@
 		var mapOptions = {
 			container: document.getElementById('custom-map'),
 			markers: [
-				[25.7627443,-80.1933667, 'Main Office, Brickell', '<p>Descripcion Main Office, Brickell</p>'],
-				[25.788666,-80.335797, 'Doral Branch', '<p>Descripcion Doral Branch</p>'],
-				[25.7592064,-80.2589465, 'Coral Gables Branch', '<p>Descripcion Coral Gables Branch</p>'],
-				[25.7619662,-80.3263765, 'Westchester Branch', '<p>Descripcion Westchester Branch</p>'],
-				[25.7735908,-80.1894627, 'Downtown Branch', '<p>Descripcion Downtown Branch</p>'],
-				[25.8669486,-80.307715, 'Hialeah Branch', '<p>Descripcion Hialeah Branch</p>'],
-				[25.6876859,-80.3529369, 'Kendall Branch', '<p>Descripcion Kendall Branch</p>']
+				[25.7627443,-80.1933667,
+				'Main Office, Brickell',
+				'<p>Descripcion Main Office, Brickell</p>'],
+				[25.788666,-80.335797,
+				'Doral Branch',
+				'<p>Descripcion Doral Branch</p>'],
+				[25.7592064,-80.2589465,
+				'Coral Gables Branch',
+				'<p>Descripcion Coral Gables Branch</p>'],
+				[25.7619662,-80.3263765,
+				'Westchester Branch',
+				'<p>Descripcion Westchester Branch</p>'],
+				[25.7735908,-80.1894627,
+				'Downtown Branch',
+				'<p>Descripcion Downtown Branch</p>'],
+				[25.8669486,-80.307715,
+				'Hialeah Branch',
+				'<p>Descripcion Hialeah Branch</p>'],
+				[25.6876859,-80.3529369,
+				'Kendall Branch',
+				'<p>Descripcion Kendall Branch</p>']
 			],
 			maxWithInfoWindow: 300
 		};
