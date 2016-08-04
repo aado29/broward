@@ -150,12 +150,15 @@ animateMenu.init();
 
 var CustomMap = function(options) {
 
+	var markers = [];
+	var infoWindows = [];
+
 	this.map = null;
 	this.mapContainer = (typeof options.container == 'object') ? options.container : document.getElementById('map-container');
 	this.mapStyle = {
 		mapTypeId: 'roadmap',
 		scrollwheel: false,
-      	zoomControl: false,
+		zoomControl: false,
 		navigationControl: false,
 		mapTypeControl: false,
 		scaleControl: false,
@@ -226,8 +229,12 @@ var CustomMap = function(options) {
 			}
 		]
 	};
-	this.markers = (typeof options.markers == 'object') ? options.markers : new Array();
+	this.markers = (typeof options.markers == 'object') ? options.markers : [];
 	this.maxWithInfoWindow = (options.maxWithInfoWindow) ? options.maxWithInfoWindow : 350;
+	this.icons = {
+		min: 'file:///Users/aado29/Documents/Proyectos/broward/images/min-marker.png',
+		max: 'file:///Users/aado29/Documents/Proyectos/broward/images/max-marker.png'
+	};
 
 	this.init = function() {
 		this.map = new google.maps.Map(this.mapContainer, this.mapStyle);
@@ -235,13 +242,17 @@ var CustomMap = function(options) {
 		this.bounds = new google.maps.LatLngBounds();
 		for (var i = 0; i < this.markers.length; i++) {
 			//this.drawMarker(i, location.hostname + 'images/min-marker.png');
-			this.drawMarker(i, 'file:///Users/aado29/Documents/Proyectos/broward/images/min-marker.png');
+			this.drawMarker(i, this.icons.min);
 		}
 	};
 
 	this.drawMarker = function(id, image) {
 		var self = this;
 		var position = new google.maps.LatLng(this.markers[id][0], this.markers[id][1]);
+		var infoWindow = new google.maps.InfoWindow({
+			maxWidth : self.maxWithInfoWindow,
+			content: self.markers[id][3]
+		});
 		var marker = new google.maps.Marker({
 			position:	position,
 			map:		self.map,
@@ -249,15 +260,18 @@ var CustomMap = function(options) {
 			icon:		image
 		});
 		self.bounds.extend(position);
+		infoWindows.push(infoWindow);
+		markers.push(marker);
 		   
 		google.maps.event.addListener(marker, 'click', (function(marker, id) { 
 			return function() {
-				var infoWindow = new google.maps.InfoWindow({
-					maxWidth : self.maxWithInfoWindow,
-					content: self.markers[id][3]
-				});
+				for (var i = 0; i < markers.length; i++) {
+					markers[i].setIcon(self.icons.min);
+					infoWindows[i].close();
+				}
+
 				infoWindow.open(self.map, marker);
-				marker.setIcon('file:///Users/aado29/Documents/Proyectos/broward/images/max-marker.png');
+				marker.setIcon(self.icons.max);
 			}
 		})(marker, id));
 
@@ -266,4 +280,23 @@ var CustomMap = function(options) {
 	};
 	
 }
+
+var toScroll = function() {
+	this.init = function() {
+		$('a[href^="#"]').on('click', function(event) {
+
+			var target = $(this.getAttribute('href'));
+
+			if( target.length ) {
+				event.preventDefault();
+				$('html, body').stop().animate({
+					scrollTop: target.offset().top
+				}, 1000);
+			}
+		});
+	}
+}
+
+var scrollAnimation = new toScroll();
+scrollAnimation.init();
 
