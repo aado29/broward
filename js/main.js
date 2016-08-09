@@ -120,7 +120,6 @@ slasticMenu = function(options) {
 
 	self.init = function() {
 		nav = $(self.fixedMenu);
-		nav.hide();
 
 		$(window).on('scroll', self.stage);
 	}
