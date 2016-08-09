@@ -75,11 +75,7 @@ animateClass = function(options) {
 		var animateElements = $('.animate', container);
 		for (var i = 0; i < animateElements.length; i++) {
 			var delay = ($(animateElements[i]).data('delay')) ? $(animateElements[i]).data('delay'): 0;
-			$(animateElements[i]).css('-webkit-transition-delay', delay+'s');
-			$(animateElements[i]).css('-moz-transition-delay', delay+'s');
-			$(animateElements[i]).css('-o-transition-delay', delay+'s');
-			$(animateElements[i]).css('transition-delay', delay+'s');
-
+			animateTransition(animateElements[i], delay);
 		}
 	}
 
@@ -87,12 +83,21 @@ animateClass = function(options) {
 		var animateElements = $('.animate', container);
 		for (var i = 0; i < animateElements.length; i++) {
 			var delay = 0;
-			$(animateElements[i]).css('-webkit-transition-delay', delay+'s');
-			$(animateElements[i]).css('-moz-transition-delay', delay+'s');
-			$(animateElements[i]).css('-o-transition-delay', delay+'s');
-			$(animateElements[i]).css('transition-delay', delay+'s');
-
+			animateTransition(animateElements[i], delay);
 		}
+	}
+
+	function animateTransition(ob, delay, type) {
+		if (!type) type = 'ease-out';
+		$(ob).css('-webkit-transition-delay', delay+'s');
+		$(ob).css('-moz-transition-delay', delay+'s');
+		$(ob).css('-o-transition-delay', delay+'s');
+		$(ob).css('transition-delay', delay+'s');
+
+		$(ob).css('-webkit-transition-timing-function', type);
+		$(ob).css('-moz-transition-timing-function', type);
+		$(ob).css('-o-transition-timing-function', type);
+		$(ob).css('transition-timing-function', type);
 	}
 }
 
@@ -127,14 +132,9 @@ slasticMenu = function(options) {
 			scrollTop = $(document).scrollTop(),
 			nav = $(self.fixedMenu);
 
-		nav.hide();
-
-
 		if ( scrollTop > ( top + height ) ) {
 			$(nav).addClass('active');
-			nav.show();
 		} else {
-			nav.hide();
 			$(nav).removeClass('active');
 		}
 	}
